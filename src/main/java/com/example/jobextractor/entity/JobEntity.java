@@ -2,6 +2,7 @@ package com.example.jobextractor.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -24,8 +25,19 @@ public class JobEntity {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "isCheck")
+    @Column(name = "is_check")
     private Boolean isCheck;
+
+    @ManyToOne
+    @JoinColumn(name = "id_pic")
+    private PICEntity pic;
+
+    @ManyToOne
+    @JoinColumn(name = "id_folder")
+    private FolderEntity folder;
+
+    @OneToMany(mappedBy = "job")
+    private List<IncondEntity> inconds;
 
     public JobEntity() {
 

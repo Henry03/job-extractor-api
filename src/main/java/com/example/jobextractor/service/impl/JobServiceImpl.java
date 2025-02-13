@@ -1,6 +1,7 @@
 package com.example.jobextractor.service.impl;
 
 import com.example.jobextractor.entity.JobEntity;
+import com.example.jobextractor.entity.dto.req.ReqJobDto;
 import com.example.jobextractor.repository.JobRepository;
 import com.example.jobextractor.service.JobService;
 import org.springframework.stereotype.Service;
@@ -28,8 +29,8 @@ public class JobServiceImpl implements JobService {
     }
 
     @Override
-    public JobEntity saveJob(JobEntity job) {
-        return jobRepository.save(job);
+    public JobEntity saveJob(ReqJobDto job) {
+        return null;
     }
 
     @Override

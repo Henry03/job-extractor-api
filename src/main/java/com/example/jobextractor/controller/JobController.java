@@ -1,6 +1,7 @@
 package com.example.jobextractor.controller;
 
 import com.example.jobextractor.entity.JobEntity;
+import com.example.jobextractor.entity.dto.req.ReqJobDto;
 import com.example.jobextractor.service.JobService;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,7 +31,7 @@ public class JobController {
     }
 
     @PostMapping
-    public JobEntity saveJob(@RequestBody JobEntity job) {
+    public JobEntity saveJob(@RequestBody ReqJobDto job) {
         return jobService.saveJob(job);
     }
 
